@@ -1,0 +1,11 @@
+README.md
+setup.py
+mydlib/__init__.py
+mydlib/libgenget.py
+mydlib/mydlib.py
+mydlib/traverser.py
+mydlib.egg-info/PKG-INFO
+mydlib.egg-info/SOURCES.txt
+mydlib.egg-info/dependency_links.txt
+mydlib.egg-info/top_level.txt
+test/test.py

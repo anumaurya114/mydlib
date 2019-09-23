@@ -1,0 +1,19 @@
+books
+books/Project Tuva: Richard Feynman's Messenger Lecture Series - Microsoft Research.html
+books/Best Math Books - A Comprehensive Reading List. - Stumbling Robot core.html
+books/Advanced Topics. - Stumbling Robot.html
+books/All The Math Books You'll Ever Need | Math ∞ Blog.html
+books/Best Math Books - A Comprehensive Reading List. - Stumbling Robot.html
+books/Textbooks (Math and Statistics) - Mathematics - LibGuides at MIT Libraries.html
+books/Noam Nisan, Shimon Schocken - The Elements of Computing Systems_ Building a Modern Computer from First Principles-The MIT Press (2005).pdf
+books/Core Mathematics Subjects. - Stumbling Robot core.html
+books/MIT Department of Physics.html
+books/maths
+books/maths/Carl D. Meyer - Matrix analysis and applied linear algebra. With solutions to problems-SIAM_ Society for Industrial and Applied Mathematics (2001).pdf
+books/maths/pure mathematics
+books/maths/pure mathematics/tensor analysis
+books/maths/pure mathematics/tensor analysis/TensorsandtheirApplications.pdf
+books/maths/pure mathematics/tensor analysis/424b86d95a9e41a065629ab73773ee9e96b8.pdf
+books/maths/pure mathematics/tensor analysis/document.pdf
+books/maths/pure mathematics/combinatorics and graphs
+books/maths/pure mathematics/combinatorics and graphs/Combinatorics and Graph Theory.pdf
