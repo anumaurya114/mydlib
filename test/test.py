@@ -1,5 +1,6 @@
 
 import mydlib 
+
 import os 
 
 
@@ -9,8 +10,9 @@ import os
 def test():
 	print("starting simple downlad test")
 	book_name = "the road to reality"
-	mydlib.get_book_libgen(book_name)
+	mydlib.get_book_libgen(book_name,auto=False)
 	print("book downloaded...")
+	return
 
 
 

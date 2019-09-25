@@ -8,7 +8,7 @@ setuptools.setup(
 
 	name='mydlib',  
 
-	version='0.3',
+	version='0.4',
 
 
 	author="Anurag Maurya",

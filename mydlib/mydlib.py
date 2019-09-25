@@ -25,13 +25,13 @@ def create_library(catalogue_name):
 	traverse_catalogue(catalogue_name,get_book)
 
 
-def get_book_libgen(book_name,path=''):
+def get_book_libgen(book_name,path='',auto=True):
 	"""
 	for downloading signle book from libgen.
 	path: is including file name.
 	input: book name
 	"""
-	get_book(book_name,path)
+	get_book(book_name,path,auto=auto)
 
 
 

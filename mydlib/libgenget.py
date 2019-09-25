@@ -76,7 +76,7 @@ def retrieve(download_link,file_name):
 
     
     
-def get_book(book_name='',file_name=''):
+def get_book(book_name='',file_name='',auto=True):
     """
     Downloads a book name given book name
             otherwise tries to extract book name from file name. if both are not present : Error
@@ -84,15 +84,17 @@ def get_book(book_name='',file_name=''):
     input:
             book_name: name of the book
             file_name: name of the file
+            auto: True for automatic choice made by code
+                  False for selecting one of results ( user can select multiple results.)
     output: 
             True if book is downloaded
             False if book is not downloaded
 
 
     """
-    if download(book_name=book_name,file_name=file_name)==False:
+    if download(book_name=book_name,file_name=file_name,auto=auto)==False:
         book_name = get_better_name(book_name)
-        if download(book_name=book_name,file_name=file_name)==False:
+        if download(book_name=book_name,file_name=file_name,auto=auto)==False:
             print("Sorry could not find the book  ",book_name)
             return False
     return True
@@ -105,7 +107,7 @@ def get_better_name(book_name):
     """
     return book_name
 
-def download(book_name='',file_name=''):
+def download(book_name='',file_name='',auto=True):
     """
     Downloads a book name given book name
             otherwise tries to extract book name from file name. if both are not present : Error
@@ -138,24 +140,48 @@ def download(book_name='',file_name=''):
         return False
             
     
-    def comparing(x):
-        return x['pages']
-    final = max(infos,key=comparing)
-    
+    def to_be_downloaded(infos):
+        def comparing(x):
+            return x['pages']
 
-    download_link = get_download_link(final['download_page'])
-    print('download link')
-    print(download_link)
-    print('File size  ',final['size'])
-    print('pages ',final['pages'])
-    print('Title',final['title'])
-    title = final['title']
-    file_type = final['type'].lower()
-    if file_name=='':
-        file_name = title+file_type 
-    print('starting downloading...')
-    retrieve(download_link,file_name)
-    print('download completed...')
+        if auto:
+            return [max(infos,key=comparing)]
+        else:
+            i = 0
+            for info in infos[:5]:
+                print("##"*20)
+                print("Result ",str(i+1))
+                print("Title: ", info['title'][:70])
+                print("Author: ",info['author'])
+                print("Pages: ", info['pages'])
+                print("Language: ",info['lang'])
+                print("Size: ",info['size'])
+                i+=1
+            print("Enter your selection space seperated ex for result 1 and 3, your enter: 1 3")
+            selection = input().split()
+            return [infos[int(i)-1] for i in selection]
+
+
+
+
+
+        return x['pages']
+    finals = to_be_downloaded(infos)
+    for final in finals:
+
+        download_link = get_download_link(final['download_page'])
+        print('download link')
+        print(download_link)
+        print('File size  ',final['size'])
+        print('pages ',final['pages'])
+        print('Title',final['title'])
+        title = final['title']
+        file_type = final['type'].lower()
+        if file_name=='':
+            file_name = title+file_type 
+        print('starting downloading...')
+        retrieve(download_link,file_name)
+        print('download completed...')
     
     return True
     
