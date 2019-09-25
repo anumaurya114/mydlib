@@ -8,29 +8,40 @@ Check test.py file for usage
     //test.py
     import mydlib 
     def test():
+	#This is example for downloading single book from libgen.
     	print("starting simple downlad test")
     	book_name = "the road to reality"
     	mydlib.get_book_libgen(book_name)
     	print("book downloaded...")
+
+
+	#for scanning your local library and saving it's information in catalogue 'catalogue_dir' 
     	directory = '../book_lib'
-    	txt_file = 'txt_file.txt'
+    	
     	catalogue_dir = 'catalogue_dir'
     	print("directory traversal catalogue test ...")
     	mydlib.create_catalogue(directory,catalogue_dir)
     	print("created catalogue by directory traversal...")
+
+	#creating a library using catalogue file 'catalogue_dir'
     	print("starting to create library using catalogue file 'catalogue_dir'")
     	mydlib.create_library(catalogue_dir)
     	print("library creation completed")
+
+
+	txt_file = 'txt_file.txt'
+	#creating catalogue file using txt_file and saving to 'catalogue_txt'
     	catalogue_txt = 'catalogue_txt'
     	print("txt file reading catalogue test ...")
     	mydlib.create_catalogue(txt_file, catalogue_txt)
     	print("created catalogue by reading txt file")
     	print("starting to created library using catalogue file 'catalogue_txt'")
+	
     	mydlib.create_library(catalogue_txt)
     	print("library creation completed")
     test()
 
-Example
+Example txt_file 
 //txt_file.txt
 
     books
